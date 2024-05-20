@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:MeteoGreppi.ViewModel"
+             xmlns:model="clr-namespace:MeteoGreppi.Model"
+             xmlns:converter="clr-namespace:MeteoGreppi.Converters"
+             x:Class="MeteoGreppi.View.ServicePage"
+             Title="ServicePage"
+             BackgroundColor="{AppThemeBinding Light=ColoreChiaro, Dark=ColoreScuro}">
+
+    <VerticalStackLayout>
+        <Grid HorizontalOptions="Fill"
+              Margin="0,0,10,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="barraDiRicerca" 
+                   Grid.Column="0"
+                   Placeholder="Enter the city name" 
+                   Completed="barraDiRicerca_Completed"
+                   Text="."/>
+            <Button x:Name="vis"
+                    Text="CHANGE MODE"
+                    Clicked="vis_Clicked"
+                    Grid.Column="1"
+                    Margin="0,0,0,0"/>
+        </Grid>
+
+        <Grid VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+            <Frame Grid.Row="0"
+            Margin="10,0,10,0"
+            Padding="0"
+            CornerRadius="10"
+            HasShadow="True"
+            HeightRequest="80"
+            VerticalOptions="Start">
+
+                <Grid Margin="0,0,0,0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125" />
+                        <ColumnDefinition Width="125" />
+                        <ColumnDefinition Width="125" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout>
+                        <Label
+                            HorizontalOptions="Center"
+                            Padding="10"
+                            CharacterSpacing="2"
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            Text="ATTUALE:"
+                            TextColor="Black"/>
+                    </StackLayout>
+
+
+                    <StackLayout Grid.Column="1" Grid.ColumnSpan="2">
+                        <Label
+                                HorizontalOptions="Center"
+                            Padding="10"
+                            CharacterSpacing="2"
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            Grid.Column="1"
+                            Text= "{Binding Forecast.Current.Weathercode, Converter={converter:WeatherCodeToDescription}}"
+                            TextColor="Black"
+                            />
+                    </StackLayout>
+
+
+                    <StackLayout 
+                    Grid.Row="1"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="12">
+                        <Image Source="humidity.png" />
+                        <StackLayout HorizontalOptions="CenterAndExpand" Spacing="7">
+                            <Label
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="{Binding Forecast.Current.Temperature, StringFormat='{0:F0} °C'}"
+                            TextColor="Black" />
+                            <Label
+                            FontSize="11"
+                            HorizontalOptions="Center"
+                            Text="Temperatura"
+                            TextColor="#7D7D7D" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="12">
+                        <Image Source="wind.png" />
+                        <StackLayout HorizontalOptions="CenterAndExpand" Spacing="7">
+                            <Label
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="{Binding Forecast.Current.Windspeed, StringFormat='{0:F0} km/h'}"
+                            TextColor="Black" />
+                            <Label
+                            FontSize="11"
+                            HorizontalOptions="Center"
+                            Text="Vento"
+                            TextColor="#7D7D7D" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="12">
+                        <Image Source="pressure.png" />
+                        <StackLayout HorizontalOptions="CenterAndExpand" Spacing="7">
+                            <Label
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="{Binding Forecast.Current.Winddirection, StringFormat='{0}°'}"
+                            TextColor="Black" />
+                            <Label
+                            FontSize="11"
+                            HorizontalOptions="Center"
+                            Text="Direzione del Vento"
+                            HorizontalTextAlignment="Center"
+                            TextColor="#7D7D7D" />
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+            <CollectionView ItemsSource="{Binding Daily}"
+                            x:Name="CollD"
+                            Margin="0,10,0,0"
+                            HeightRequest="600"
+                            Grid.Row="3"
+                            WidthRequest="372"
+                            HorizontalOptions="Center">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:DailySingle">
+                        <Frame>
+                            <!--<Grid VerticalOptions="Fill"
+                                  Margin="0,-10,0,0">
+
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80*"/>
+                                    <ColumnDefinition Width="20*"/>
+                                </Grid.ColumnDefinitions>-->
+
+                            <Grid Margin="0,0,0,-10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Time}"
+                                           Margin="0,0,0,0"
+                                           Grid.ColumnSpan="2"
+                                           FontAttributes="Bold"
+                                           TextColor="Black"/>
+
+                                <Label Text="{Binding Temperature2mMin, StringFormat='{0:F0}°'}"
+                                           Grid.Row="1"
+                                           HorizontalOptions="Start"
+                                           TextColor="Black"/>
+                                <Label Text="Min"
+                                           Grid.Row="2"
+                                           FontSize="11"
+                                           TextColor="#7D7D7D" />
+
+                                <Label Text="{Binding Temperature2mMax, StringFormat='{0:F0}°'}"
+                                           Grid.Row="1"
+                                           Grid.Column="1"
+                                           HorizontalOptions="Start"
+                                           TextColor="Black"/>
+                                <Label Text="Max"
+                                           Grid.Row="2"
+                                           Grid.Column="1"
+                                           FontSize="11"
+                                           TextColor="#7D7D7D" />
+
+                                <Label Text="{Binding Weathercode, Converter={converter:WeatherCodeToDescription}}"
+                                           Margin="-30,0,-30,0"
+                                           Grid.Column="2"
+                                           Grid.ColumnSpan="4"
+                                           Grid.RowSpan="1"
+                                           HorizontalOptions="Center"
+                                           HorizontalTextAlignment="Center"
+                                           TextColor="Black"/>
+                                <Label Text="{Binding Windspeed10mMax, StringFormat='{0:F0} km/h'}"
+                                           Margin="-30,0,0,0"
+                                           Grid.Row="1"
+                                           Grid.Column="2"
+                                           HorizontalOptions="Center"
+                                           TextColor="Black"/>
+                                <Label Text="Vento"
+                                           Margin="-30,0,0,0"
+                                           Grid.Row="2"
+                                           Grid.Column="2"
+                                           FontSize="11"
+                                           HorizontalOptions="Center"
+                                           TextColor="#7D7D7D" />
+                                <Label Text="{Binding PrecipitationSum, StringFormat='{0:F0} mm'}"
+                                           Grid.Row="1"
+                                       Margin="-10,0,0,0"    
+                                       Grid.Column="3"
+                                           HorizontalOptions="Center"
+                                           TextColor="Black"/>
+                                <Label Text="Precipitazioni"
+                                           Margin="-10,0,0,0"
+                                           Grid.Row="2"
+                                           Grid.Column="3"
+                                           WidthRequest="60"
+                                           FontSize="11"
+                                           HorizontalOptions="Center"
+                                           TextColor="#7D7D7D" />
+                                <Label Text="{Binding Sunrise}"
+                                           Margin="0,0,0,0"
+                                           Grid.Row="1"
+                                           Grid.Column="4"
+                                           HorizontalOptions="Center"
+                                           TextColor="Black"/>
+                                <Label Text="Alba"
+                                           Margin="0,0,0,0"
+                                           Grid.Row="2"
+                                           Grid.Column="4"
+                                           FontSize="11"
+                                           HorizontalOptions="Center"
+                                           TextColor="#7D7D7D" />
+                                <Label Text="{Binding Sunset}"
+                                           Margin="0,0,0,0"
+                                           Grid.Row="1"
+                                           Grid.Column="5"
+                                           HorizontalOptions="Center"
+                                           TextColor="Black"/>
+                                <Label Text="Tramonto"
+                                           Margin="0,0,0,0"
+                                           Grid.Row="2"
+                                           Grid.Column="5"
+                                           FontSize="11"
+                                           HorizontalOptions="Center"
+                                           TextColor="#7D7D7D" />
+                            </Grid>
+                            <!--<Button x:Name="ToHourly"
+                                            Grid.Column="1"
+                                        Text="Dettagli" 
+                                        Margin="-20,0,0,0"
+                                        HorizontalOptions="Center"
+                                        Clicked="InfoButton_clicked"
+                                        BorderColor="Black"/>-->
+
+                            <!--</Grid>-->
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <CollectionView ItemsSource="{Binding Hourly}"
+                            x:Name="CollH"
+                Margin="0,10,0,0"
+                HeightRequest="600"
+                Grid.Row="3"
+                WidthRequest="372"
+                HorizontalOptions="Center">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:HourlySingle">
+                        <Frame>
+                            <!--<Grid VerticalOptions="Fill">
+
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80*"/>
+                                    <ColumnDefinition Width="20*"/>
+                                </Grid.ColumnDefinitions>-->
+
+                            <Grid Margin="0,0,0,-10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Hour}"
+                                       Margin="0,0,0,0"
+                                       Grid.ColumnSpan="1"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+                                <Label Text="{Binding Time}"
+                                       Margin="-10,0,-10,0"
+                                       Grid.Column="1"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+                                <Label Text="{Binding Weathercode, Converter={converter:WeatherCodeToDescription}}"
+                                       Margin="-30,0,-30,0"
+                                       Grid.Column="2"
+                                       Grid.ColumnSpan="4"
+                                       Grid.RowSpan="1"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Start"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="Black"/>
+
+                                <Label Text="{Binding Temperature2m, StringFormat='{0:F0}°'}"
+                                       Grid.Row="1"
+                                       HorizontalOptions="Start"
+                                       TextColor="Black"/>
+                                <Label Text="Temp"
+                                       Grid.Row="2"
+                                       HorizontalOptions="Start"
+                                       FontSize="11"
+                                       TextColor="#7D7D7D" />
+
+                                <Label Text="{Binding Relativehumidity2m, StringFormat='{0:F0}%'}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       Margin="-20,0,0,0"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"/>
+                                <Label Text="Umidità"
+                                       Grid.Row="2"
+                                       Margin="-20,0,0,0"
+                                       HorizontalOptions="Center"
+                                       Grid.Column="1"
+                                       FontSize="11"
+                                       TextColor="#7D7D7D" />
+
+                               
+                                <Label Text="{Binding Windspeed10m, StringFormat='{0:F0} km/h'}"
+                                       Grid.Row="1"
+                                       Grid.Column="2"
+                                       Margin="-20,0,0,0"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"/>
+                                <Label Text="Vento"
+                                       Margin="-20,0,0,0"
+                                       Grid.Row="2"
+                                       Grid.Column="2"
+                                       FontSize="11"
+                                       HorizontalOptions="Center"
+                                       TextColor="#7D7D7D" />
+                                <Label Text="{Binding Precipitation, StringFormat='{0:F0} mm'}"
+                                       Grid.Row="1"
+                                       Grid.Column="3"
+                                       Margin="-5,0,0,0"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"/>
+                                <Label Text="Precipitazioni"
+                                       Margin="-5,0,0,0"
+                                       Grid.Row="2"
+                                       Grid.Column="3"
+                                       FontSize="11"
+                                       WidthRequest="60"
+                                       HorizontalOptions="Center"
+                                       TextColor="#7D7D7D" />
+                                <Label Text="{Binding UvIndex}"
+                                       Margin="0,0,0,0"
+                                       Grid.Row="1"
+                                       Grid.Column="4"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"/>
+                                <Label Text="Indice UV"
+                                       Margin="0,0,0,0"
+                                       Grid.Row="2"
+                                       Grid.Column="4"
+                                       FontSize="11"
+                                       HorizontalOptions="Center"
+                                       TextColor="#7D7D7D" />
+                                <Label Text="{Binding Visibility, StringFormat='{0:F0} m'}"
+                                       Margin="0,0,0,0"
+                                       Grid.Row="1"
+                                       Grid.Column="5"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"/>
+                                <Label Text="Visibilità"
+                                       Margin="0,0,0,0"
+                                       Grid.Row="2"
+                                       Grid.Column="5"
+                                       FontSize="11"
+                                       HorizontalOptions="Center"
+                                       TextColor="#7D7D7D" />
+                                <!--<Button x:Name="ToHourly"
+                                Grid.Column="1"
+                            Text="Dettagli" 
+                            Margin="-20,0,0,0"
+                            HorizontalOptions="Center"
+                            Clicked="InfoButton_clicked"
+                            BorderColor="Black"/>-->
+
+
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,12 @@
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\bin\Debug\net7.0\HttpProxyControl.deps.json
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\bin\Debug\net7.0\HttpProxyControl.dll
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\bin\Debug\net7.0\HttpProxyControl.pdb
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\obj\Debug\net7.0\HttpProxyControl.csproj.AssemblyReference.cache
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\obj\Debug\net7.0\HttpProxyControl.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\obj\Debug\net7.0\HttpProxyControl.AssemblyInfoInputs.cache
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\obj\Debug\net7.0\HttpProxyControl.AssemblyInfo.cs
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\obj\Debug\net7.0\HttpProxyControl.csproj.CoreCompileInputs.cache
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\obj\Debug\net7.0\HttpProxyControl.dll
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\obj\Debug\net7.0\refint\HttpProxyControl.dll
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\obj\Debug\net7.0\HttpProxyControl.pdb
+C:\Users\cripp\OneDrive\Desktop\MeteoGreppi\HttpProxyControl\obj\Debug\net7.0\ref\HttpProxyControl.dll

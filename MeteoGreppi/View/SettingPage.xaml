@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeteoGreppi.View.SettingPage"
+             Title="SettingPage">
+    
+    <VerticalStackLayout>
+        <Entry x:Name="defaultEntry"
+               Placeholder="Scrivi la posizione di default"
+               Completed="defaultEntry_Completed"/>
+
+        <HorizontalStackLayout>
+            <Switch x:Name="geolocationSwitch"
+                    VerticalOptions="Center"
+                    Toggled="geolocationSwitch_Toggled"/>
+            <Label Text="Usa la geolocalizzazione come predefinita"
+                   VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+    
+</ContentPage>

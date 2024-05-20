@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MeteoGreppi</name>
+    </assembly>
+    <members>
+        <member name="P:MeteoGreppi.ViewModel.ServicePageViewModel.Forecast">
+            <inheritdoc cref="F:MeteoGreppi.ViewModel.ServicePageViewModel.forecast"/>
+        </member>
+        <member name="P:MeteoGreppi.ViewModel.ServicePageViewModel.Hourly">
+            <inheritdoc cref="F:MeteoGreppi.ViewModel.ServicePageViewModel.hourly"/>
+        </member>
+        <member name="P:MeteoGreppi.ViewModel.ServicePageViewModel.Daily">
+            <inheritdoc cref="F:MeteoGreppi.ViewModel.ServicePageViewModel.daily"/>
+        </member>
+        <member name="P:MeteoGreppi.ViewModel.ServicePageViewModel.Place">
+            <inheritdoc cref="F:MeteoGreppi.ViewModel.ServicePageViewModel.place"/>
+        </member>
+    </members>
+</doc>

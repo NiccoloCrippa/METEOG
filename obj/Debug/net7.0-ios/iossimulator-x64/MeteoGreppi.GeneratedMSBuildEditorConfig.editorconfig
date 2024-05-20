@@ -1,0 +1,59 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net7.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MeteoGreppi
+build_property.ProjectDir = C:\Users\cripp\Downloads\MeteoGreppi\MeteoGreppi\MeteoGreppi\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[C:/Users/cripp/Downloads/MeteoGreppi/MeteoGreppi/MeteoGreppi/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MeteoGreppi.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/cripp/Downloads/MeteoGreppi/MeteoGreppi/MeteoGreppi/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MeteoGreppi.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/cripp/Downloads/MeteoGreppi/MeteoGreppi/MeteoGreppi/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MeteoGreppi.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/cripp/Downloads/MeteoGreppi/MeteoGreppi/MeteoGreppi/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MeteoGreppi.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/cripp/Downloads/MeteoGreppi/MeteoGreppi/MeteoGreppi/View/InfoHourlyPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MeteoGreppi.View.InfoHourlyPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\InfoHourlyPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\InfoHourlyPage.xaml
+
+[C:/Users/cripp/Downloads/MeteoGreppi/MeteoGreppi/MeteoGreppi/View/ServicePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MeteoGreppi.View.ServicePage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\ServicePage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\ServicePage.xaml
+
+[C:/Users/cripp/Downloads/MeteoGreppi/MeteoGreppi/MeteoGreppi/View/SettingPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MeteoGreppi.View.SettingPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\SettingPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\SettingPage.xaml

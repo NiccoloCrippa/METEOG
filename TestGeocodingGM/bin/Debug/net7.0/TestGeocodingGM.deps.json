@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "TestGeocodingGM/1.0.0": {
+        "dependencies": {
+          "HttpProxyControl": "1.0.0"
+        },
+        "runtime": {
+          "TestGeocodingGM.dll": {}
+        }
+      },
+      "HttpProxyControl/1.0.0": {
+        "runtime": {
+          "HttpProxyControl.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TestGeocodingGM/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HttpProxyControl/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

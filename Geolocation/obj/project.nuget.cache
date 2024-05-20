@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "87zKj8+JftHvbBd/HzGO5/vr8SCPGqBWUuCyUq/Dw1cku5+I0Uj2sAMgFXZV8i13Bcq6ZqNgnsQtnnAO7PhdzQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cripp\\OneDrive\\Desktop\\MeteoGreppi\\Geolocation\\Geolocation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cripp\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\cripp\\.nuget\\packages\\xamarin.essentials\\1.7.5\\xamarin.essentials.1.7.5.nupkg.sha512"
+  ],
+  "logs": []
+}
